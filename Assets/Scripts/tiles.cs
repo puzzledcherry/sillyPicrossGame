@@ -8,4 +8,8 @@ public class tiles : MonoBehaviour
     public bool correctAnswer;
     public bool selected = false;
     public bool x = false;
+
+    void Start() {
+        answerKeyManager.addToList(this);
+    }
 }

@@ -6,6 +6,7 @@ public class answerKeyManager : MonoBehaviour
 {
     // variables
     tiles currSelect;
+    public static List<tiles> tileBoard = new List<tiles>();
 
     void Start() {
 
@@ -15,6 +16,18 @@ public class answerKeyManager : MonoBehaviour
     void Update() {
         // check if the user clicked a tile
         userClick();
+        if (complete()) {
+            Debug.Log("puzzle solved!");
+        }
+    }
+
+    bool complete() {
+        for (int i = 0; i < tileBoard.Count; i++) {
+            if (tileBoard[i].selected != tileBoard[i].correctAnswer) {
+                return false;
+            }
+        }
+        return true;
     }
 
     // when a user clicks something
@@ -41,6 +54,10 @@ public class answerKeyManager : MonoBehaviour
         if (hit.collider.gameObject.tag == "tiles") {
                 currSelect = hit.collider.gameObject.GetComponent<tiles>();
         }
+    }
+
+    public static void addToList(tiles t) {
+        tileBoard.Add(t);
     }
 
 }
