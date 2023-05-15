@@ -6,17 +6,6 @@ public class tiles : MonoBehaviour
 {
     // variables
     public bool correctAnswer;
-    public bool selected;
-
-    // called before the first frame update
-    void Start()
-    {
-        selected = false;
-    }
-
-    // called once per from
-    void Update()
-    {
-        
-    }
+    public bool selected = false;
+    public bool x = false;
 }
