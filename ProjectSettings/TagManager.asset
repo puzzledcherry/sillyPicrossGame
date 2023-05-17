@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - tiles
+  - buttonOne
+  - buttonThree
+  - buttonTwo
   layers:
   - Default
   - TransparentFX
